@@ -1,0 +1,55 @@
+<%include ../common/header.html %>
+
+    <div class="am-container">
+        <!--<div class="am-g">-->
+            <!--<a class="questionName"></a>-->
+            <!--&lt;!&ndash;<input type="submit" name="" value="我要提问" class="am-btn am-btn am-btn-primary am-fr">&ndash;&gt;-->
+            <!--&lt;!&ndash;<hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>&ndash;&gt;-->
+        <!--</div>-->
+        <br/>
+        <div class="am-g">
+            <div class="am-u-lg-8 questionDiv" id="questionAnswerDiv">
+                <div class="questionNameDiv">
+                    <div style="border-bottom: 2px solid blue; margin-bottom: 10px;">
+                        <a class="questionName"></a>
+                    </div>
+                </div>
+
+                <div class="questionTagDiv">
+                    <div>
+                        <label class="tagTitle">标签:</label>
+                        <span class="tagName am-badge am-badge-primary" >sdfsdfs</span>
+                        <span class="tagName am-badge am-badge-primary" >sdfsdfs</span>
+                        <span class="tagName am-badge am-badge-primary" >sdfsdfs</span>
+                        <span class="tagName am-badge am-badge-primary" >sdfsdfs</span>
+                        <span class="tagName am-badge am-badge-primary" >sdfsdfs</span>
+                        <span class="tagName am-badge am-badge-primary" >sdfsdfs</span>
+                        <span class="tagName am-badge am-badge-primary" >sdfsdfs</span>
+                    </div>
+                </div>
+
+                <button type="button" class="am-btn am-btn-primary">默认样式</button>
+                <br/>
+                <br/>
+            </div>
+
+            <div class="am-u-lg-4">
+                <div class="am-panel-group">
+                    <section class="am-panel am-panel-default">
+                        <div class="am-panel-hd"><a class="questionName"></a></div>
+                        <div class="am-panel-bd">
+                            <p>点赞</p>
+                            <a class="am-btn am-btn-success am-btn-sm" href="#">查看更多 →</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+<input type="hidden" id="questionId" value="<%= questionId %>">
+<%include ../common/markdown.html%>
+<%include ../common/footer.html %>
+<link rel="stylesheet" href="/css/question/questionInfo.css"/>
+<script src="/js/question/questionInfo.js"></script>
+</body>
+</html>

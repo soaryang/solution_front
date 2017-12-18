@@ -1,0 +1,43 @@
+<%include ../common/header.html %>
+<div class="content">
+    <div class="am-g am-container">
+        <form id="questionForm">
+            <div class="am-u-lg-12">
+                <div class="am-g">
+                    <div class="am-u-lg-9 am-u-md-4 am-u-sm-12">
+                        <h3>你的题目</h3>
+                        <div class="am-form-group">
+                            <input name="name" type="text" class="am-form-field am-input-sm" placeholder="你的题目">
+                        </div>
+
+                        <label>相关点</label>
+                        <div class="am-form-group tagDiv">
+                            <input type="text" id="tagInput"  name="tagInput" class="tagInput" placeholder="标签最多选3个"/>
+                            <button type="button" class="am-btn am-btn-warning addCustomeTag">添加</button>
+
+                        </div>
+                        <div id="txtblogcontent">
+                            <textarea style="display: none;" name="describe"></textarea>
+                        </div>
+
+                        <input type="button" value="保存" class="saveQuestionBtn"/>
+                    </div>
+                    <div class="am-u-lg-3 am-u-md-8 am-u-sm-12" style="margin-top: 10px;">
+                        热门问题
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="/plug/jquery/jquery-ui.css">
+<script src="/plug/jquery/jquery-ui.js"></script>
+<script src="/plug/markdown/editormd.min.js"></script>
+<link rel="stylesheet" href="/css/question/questionAdd.css"/>
+<script type="text/javascript" src="/js/common/soaryang.markdown.plug.js"></script>
+
+<script type="text/javascript" src="/js/question/questionAdd.js"></script>
+<%include ../common/footer.html %>
+</body>
+</html>

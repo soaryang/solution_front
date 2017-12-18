@@ -1,0 +1,47 @@
+.get {
+    background: #1E5B94;
+    color: #fff;
+    padding: 50px 0px 20px 0px;
+}
+
+.content{
+    padding: 20px 0;
+
+}
+
+.content h1{
+    color:black;
+}
+
+
+.tagDiv {
+    border:1px solid cornflowerblue;
+    align-items: center;
+}
+.tagDiv .tagInput{
+    border: none !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    padding: 0 !important;
+    margin: 4px 3px 0;
+    background-color: transparent !important;
+    height: 25px;
+    width: auto;
+}
+
+.tagDiv .tagName{
+    font-size: 10px;
+    margin-left: 1px;
+}
+
+.tagDiv .tagRemove{
+    margin-left: 20px;
+}
+
+.addCustomeTag {
+    display: none;
+}
+
+.tagInfo {
+    color: black;
+}
