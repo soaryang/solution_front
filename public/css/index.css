@@ -88,8 +88,11 @@
     white-space: nowrap;
     text-decoration: none;
     text-align: center;
-    border: 0 solid transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #00aaaa;
     border-radius: .28571429rem;
+    transition: all .15s ease-in-out;
 }
 
 
