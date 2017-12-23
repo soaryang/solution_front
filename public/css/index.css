@@ -59,6 +59,7 @@
     text-align: left;
     border-bottom: solid 1px lightgray;
     margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .questionItem .detail h3 {
