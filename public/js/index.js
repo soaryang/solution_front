@@ -23,7 +23,7 @@ var init = function (index, type) {
                 html+='<li>';
                 html+='<a href="http://www.baidu.com">';
                 html+='<div class="am-thumbnail" style="margin-bottom: 0px;">';
-                html+='<img  style="margin-bottom: 0px; height: 100px; width: 100px;" src="'+tempData.url+'" />';
+                html+='<img  style="margin-bottom: 0px; height: 100px; width: 100px;" src="http://www.yangtengfei/images'+tempData.imagePath+'" />';
                 html+=tempData.name;
                 html+='</div>';
                 html+='</a>';
