@@ -74,7 +74,7 @@ var init = function (index, type) {
                     html+='</div>';
                     html+='</div>';
                     html+='</div>';
-                    html+='<hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>';
+                    //html+='<hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>';
                 }
                 $("#tab"+type).html(html);
             }
