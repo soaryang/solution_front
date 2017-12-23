@@ -57,6 +57,7 @@
 .questionItem{
     font: 16px Arial, Helvetica, sans-serif;
     text-align: left;
+    border-bottom: solid 1px lightgray;
 }
 
 .questionItem .detail h3 {
