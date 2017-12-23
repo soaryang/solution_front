@@ -64,7 +64,7 @@ var init = function (index, type) {
                     html+='</h3>';
                     html+='<div style="margin-left:80px;" class="other">';
                     html+='<span class="from">FROM:管理员</span>';
-                    html+='<span class="from am-btn am-btn-success">回答:'+questionObject.solutionCount+'</span>';
+                    html+='<span class="from am-btn-success">回答:'+questionObject.solutionCount+'</span>';
                     html+='<span class="from">访问:0</span>';
                     html+='<span class="from">关注:0</span>';
                     html+='<span class="from">日期:'+$.dateFormat(questionObject.createTime)+'</span>';
