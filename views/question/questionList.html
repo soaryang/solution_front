@@ -1,0 +1,31 @@
+<%include ../common/header.html %>
+<div class="mainContainer">
+    <div>
+        标签名称
+    </div>
+    <div  class="am-g" style="margin-top: 10px;">
+        <div class="am-u-lg-12" style="padding-left: 0px; padding-right: 0px;">
+            <div class="am-u-lg-8" style="padding-left: 0px; padding-right: 0px;">
+                <ul class="am-nav am-nav-tabs">
+                    <li class="am-active tab1"><a class="am-icon-stack-overflow" href="javascipt:void(0)">&nbsp;最新问题</a></li>
+                    <li class="tab2"><a  class="am-icon-stack-overflow" href="javascipt:void(0)" >&nbsp;热门问题</a></li>
+                    <!--<li><a href="#">十万火急</a></li>-->
+                </ul>
+                <div class="am-tabs-bd" style="border: 0px;padding-left: 0px;">
+                    <div class="am-in am-active" id="tab1">
+                    </div>
+                    <div class="am-in am-active" id="tab2">
+                    </div>
+                </div>
+            </div>
+
+            <%include ../common/right.html %>
+        </div>
+    </div>
+</div>
+<%include ../common/footer.html %>
+<link rel="stylesheet" href="/css/index.css"/>
+<script src="/plug/showdown/showdown.min.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

@@ -36,6 +36,9 @@ router.get('/login', function (req, res, next) {
 router.get('/questionAdd', function (req, res, next) {
     res.render('question/questionAdd', {title: 'Express'});
 });
+router.get('/questionList/:id', function (req, res, next) {
+    res.render('question/questionList', {title: 'Express'});
+});
 
 
 router.get("/question/:id", function (req, res, next) {
