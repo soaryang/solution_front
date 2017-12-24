@@ -1,4 +1,7 @@
 
+$(document).bind("contextmenu",function(e){
+    return false;
+});
 function doShowContent(){
     var url ="/v1/api/question/findById?id="+$("#questionId").val();
     soaryang.getAjax(url, {}, function (data) {
@@ -14,11 +17,11 @@ function doShowContent(){
             questionAnswerDiv.append($(contentDiv));*/
             var solutionArray = jsonObject.solutionViewList;
             var solutionListDiv = $(".solutionList");
-            for(var i=0; i<10; i++){
+            for(var i=0; i<solutionArray.length; i++){
                 var id = "test-editormd-view"+i;
                 var contentDiv= '<div id="'+id+'" style="border: 1px solid rgb(221, 221, 221);"></div>'
                 solutionListDiv.append($(contentDiv));
-                initEdit(id);
+                initEdit(id,solutionArray[i].content);
             }
 
             /*var solutionArray = jsonObject.solutionViewList;
@@ -66,7 +69,7 @@ function doShowContent(){
 
 }
 
-function initEdit(id) {
+function initEdit(id,content) {
     var testEditormdView =function () {
         return editormd(id, {
             width        : "90%",
@@ -75,7 +78,7 @@ function initEdit(id) {
     }
 
     testEditormdView =editormd.markdownToHTML(id,{
-        markdown: "sssssssssssssssssss",//+ "\r\n" + $("#append-test").text(),
+        markdown: content,//+ "\r\n" + $("#append-test").text(),
         //htmlDecode:false,       // 开启 HTML 标签解析，为了安全性，默认不开启
         //htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
         //toc             : false,
