@@ -70,7 +70,7 @@ var init = function (index, type) {
                     html+='<span class="from">日期:'+$.dateFormat(questionObject.createTime)+'</span>';
                     html+='</div>';
                     html+='<div style="margin-left:80px;margin-top:10px;">';
-                    html+='<span class="tag">git</span>';
+                    html+='<span class="tag">'+questionObject.tagName+'</span>';
                     html+='</div>';
                     html+='</div>';
                     html+='</div>';
