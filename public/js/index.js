@@ -69,7 +69,7 @@ var init = function (index, type) {
                     html+='<span class="from">关注:0</span>';
                     html+='<span class="from">日期:'+$.dateFormat(questionObject.createTime)+'</span>';
                     html+='</div>';
-                    html+='<div style="margin-left:80px;">';
+                    html+='<div style="margin-left:80px;margin-top:20px;">';
                     html+='<span class="tag">git</span>';
                     html+='</div>';
                     html+='</div>';
