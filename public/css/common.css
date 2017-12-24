@@ -7,8 +7,10 @@ body{
     -webkit-font-smoothing: antialiased;
 }
 
+.footer{
+    margin-top: 20px;
+}
 .footer p {
-    margin-top: 10px;
     color: #7f8c8d;
     margin: 0;
     padding: 15px 0;
