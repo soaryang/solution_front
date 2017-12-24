@@ -8,7 +8,7 @@ function doShowContent(){
         if(data.code ==200){
             var jsonObject = data.data;
             $(".questionName").html(jsonObject.name);
-            $(".titletag").html(jsonObject.tagName);
+            $(".tagName").html(jsonObject.tagName);
             var id = "test-editormd-view";
             /*var contentDiv= '<div id="'+id+'" style="border: 1px solid rgb(221, 221, 221);">' +
                 '<textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>' +
