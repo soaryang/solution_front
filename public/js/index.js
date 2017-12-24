@@ -13,6 +13,15 @@ $(".tab2").click(function(){
 })
 var init = function (index, type) {
 
+    for(var i=1; i<=3; i++){
+        if(i==type){
+            $("#tab"+i).show();
+            $(".tab"+i).addClass("am-active");
+        }else{
+            $("#tab"+i).hide();
+            $(".tab"+i).removeClass("am-active");
+        }
+    }
     //加载tag数据
     soaryang.getAjax(indexTagData, {}, function (data) {
         if (data != null) {
