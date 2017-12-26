@@ -1,0 +1,78 @@
+.mainContainer{
+    margin-top: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainContainer .mainTagInfo{
+    font-size:30pt;
+    font-weight: 600;
+    /*box-shadow: 0 1px 1px 0 rgba(34, 36, 38, .15);
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34, 36, 38, .15);*/
+}
+
+
+
+.tagImage{
+    width: 50px;
+    height: 50px;
+}
+
+.tagLine .tagCell .tagCellContent{
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    min-height: 80px;
+    text-align: center;
+}
+
+.questionItem{
+    font: 16px Arial, Helvetica, sans-serif;
+    text-align: left;
+    /*border-bottom: solid 1px lightgray;*/
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34, 36, 38, .15);
+}
+
+.questionItem .detail h3 {
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+    font-weight: normal;
+    background: 0;
+    font: 16px Arial, Helvetica, sans-serif;
+    color: #666666;
+}
+
+.questionItem .detail .other .from{
+    color: #666;
+    margin-right: 18px;
+    font: 12px Helvetica,Arial,sans-serif;
+}
+
+.questionItem .detail .tag {
+    position: relative;
+    display: inline-block;
+    padding: .4em .5em;
+    margin: 2px 2px 2px 0;
+    font-size: 11px;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #00aaaa;
+    border-radius: .28571429rem;
+    transition: all .15s ease-in-out;
+}
+
+.webSiteInfo{
+    text-align: center;
+}
