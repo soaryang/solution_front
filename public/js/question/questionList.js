@@ -13,7 +13,8 @@ $(".tab1").click(function(){
 $(".tab2").click(function(){
     init(1,2);
 })
-(function () {
+
+var initTag = function(){
     soaryang.getAjax("/v1/api/tag/"+$(".tagId").val(), {}, function (data) {
         if(data.code==200){
             $(".tagName").html(data.name);
@@ -22,8 +23,7 @@ $(".tab2").click(function(){
     },function (data) {
 
     });
-
-})();
+}
 var init = function (index, type) {
     for(var i=1; i<=3; i++){
         if(i==type){
@@ -150,3 +150,4 @@ var init = function (index, type) {
     }, function (data) {
     })*/
 };
+initTag();
