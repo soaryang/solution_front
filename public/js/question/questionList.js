@@ -14,7 +14,7 @@ $(".tab2").click(function(){
     init(1,2);
 })
 (function () {
-    soaryang.getAjax(url, {}, function (data) {
+    soaryang.getAjax("/v1/api/tag/"+$(".tagId").val(), {}, function (data) {
         if(data.code==200){
             $(".tagName").html(data.name);
             init(1, 1);
