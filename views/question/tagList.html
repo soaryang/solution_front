@@ -1,0 +1,31 @@
+<%include ../common/header.html %>
+<div class="mainContainer">
+    <div  class="am-g">
+        <div class="am-u-lg-12" style="padding-left: 0px; padding-right: 0px;">
+            <div class="am-u-lg-9" style="padding-left: 0px; padding-right: 0px;">
+                <div class="am-tabs-bd" style="border: 0px;padding-left: 0px;">
+                    <div class="tagInfo">
+                        <span style="font-size: 15pt;color: #00a8c6;">
+                            Spring Boot Admin管理监控数据
+                        </span>
+                        <div style="margin-top: 5px;color: gray; height: 60px;">
+                            spring boot actuator 可以监控应用的各种信息， 唯一的缺点就是返回的监控信息是JSON格式的数据，还有一点就是在微服务架构下，服务的实例会很多，一个个去看监控信息这似乎有点不太可能，而且这么多地址信息也只能去Eureka中去找，有没有一
+                        </div>
+                        <div style="border-top: 1px solid lightgray; margin-top: 10px;padding-top: 5px;">
+                            <span >问题:200</span>
+                            <span style="margin-left: 10px;">文章:200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%include ../common/right.html %>
+        </div>
+    </div>
+</div>
+<%include ../common/footer.html %>
+<link rel="stylesheet" href="/css/question/tagList.css"/>
+<script src="/plug/showdown/showdown.min.js"></script>
+<script src="/js/question/tagList.js"></script>
+</body>
+</html>
