@@ -38,6 +38,14 @@ var init = function (index, type) {
                 html+='</a>';
                 html+='</li>';
             }
+            html+='<li>';
+            html+='<a href="/tagList">';
+            html+='<div class="am-thumbnail" style="margin-bottom: 0px;">';
+            html+='<img  style="margin-bottom: 0px; height: 100px; width: 200px;" src="http://www.yangtengfei.cn/images/common/more.jpg" />';
+            //html+=tempData.name;
+            html+='</div>';
+            html+='</a>';
+            html+='</li>';
             $(".tagList").html(html);
         }
     },function (data) {
