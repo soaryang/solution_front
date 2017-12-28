@@ -20,9 +20,9 @@ var init = function () {
                 for (var i = 0; i < questionArray.length; i++) {
                     var object  = questionArray[i];
                     html+='<div class="tagInfo">';
-                    html+='<span style="font-size: 15pt;color: #00a8c6;">';
+                    html+='<span style="font-size: 15pt;color: #00a8c6;"><a href="/questionList/'+object.id+'">';
                     html+=object.name;
-                    html+='</span>';
+                    html+='</a></span>';
                     html+='<div style="margin-top: 5px;color: gray; height: 60px;">';
                     html+=object.describe==undefined || object.describe ==null ? "暂无描述":object.describe;
                     html+='</div>';
