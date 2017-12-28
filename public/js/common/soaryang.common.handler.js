@@ -28,6 +28,16 @@ $.ajaxSetup({
         //xhr.setRequestHeader('Content-Type', 'application/xml;charset=utf-8');
         console.log('beforeSend invoke!' +'<br/>');
     },
-})
+});
+
+
+var navbarSelect = function () {
+    var pathName = window.location.pathname;
+    if(pathName.indexOf("/tagList")!=-1){
+        $("#tagPage").addClass("am-active")
+    }else{
+        $("#indexPage").addClass("am-active")
+    }
+}
 
 
