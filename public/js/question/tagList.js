@@ -1,3 +1,43 @@
 /**
  * Created by admin on 2017/12/27.
  */
+var pageSize = 20;
+var pageNo = 1;
+var tagListUr = "/v1/api/tag/page/"
+var init = function () {
+    url = tagListUr+pageNo+"/"+pageSize;
+    console.log(url);
+    soaryang.getAjax(url, {}, function (data) {
+        console.log(data);
+        var html = "";
+        if (data != null) {
+            var count = data.total;
+            if(count==0){
+                return;
+            }
+            var questionArray = data.rows;
+            if (questionArray != null) {
+                for (var i = 0; i < questionArray.length; i++) {
+                    var object  = questionArray[i];
+                    html+='<div class="tagInfo">';
+                    html+='<span style="font-size: 15pt;color: #00a8c6;">';
+                    html+=object.name;
+                    html+='</span>';
+                    html+='<div style="margin-top: 5px;color: gray; height: 60px;">';
+                    html+=object.describe==undefined || object.describe ==null ? "暂无描述":object.describe;
+                    html+='</div>';
+                    html+='<div style="border-top: 1px solid lightgray; margin-top: 10px;padding-top: 5px;">';
+                    html+='<span >问题:200</span>';
+                    html+='<span style="margin-left: 10px;">文章:200</span>';
+                    html+='</div>';
+                    html+='</div>';
+                    //html+='<hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>';
+                }
+                $("#tagList").html(html);
+            }
+        }
+    }, function (data) {
+    })
+};
+
+init();
