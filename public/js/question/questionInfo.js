@@ -29,9 +29,9 @@ function showSolution(questionId) {
     var url ="/v1/api/solution/findQuetionId/"+questionId;
     soaryang.getAjax(url, {}, function (data) {
         if(data.code ==200){
-            var jsonObject = data.data;
+
             var id = "test-editormd-view";
-             var solutionArray = jsonObject.solutionViewList;
+             var solutionArray = data.data;
              var solutionListDiv = $(".solutionList");
              for(var i=0; i<solutionArray.length; i++){
                  var id = "test-editormd-view"+i;
