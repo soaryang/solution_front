@@ -24,9 +24,9 @@ var init = function () {
                     html+='<span style="font-size: 10pt;color: #00a8c6;"><a href="/questionList/'+object.id+'">';
                     html+=object.name;
                     html+='</a></span>';
-                    html+='<div style="margin-top: 5px;color: gray; height: 60px;">';
-                    html+=object.describe==undefined || object.describe ==null ? "暂无描述":object.describe;
-                    html+='</div>';
+                    html+='<p class="tagDescribe">';
+                    html+=getDescribe(object.describe);
+                    html+='</p>';
                     html+='<div style="border-top: 1px solid lightgray; margin-top: 10px;padding-top: 5px;">';
                     html+='<span >问题:200</span>';
                     html+='<span style="margin-left: 10px;">文章:200</span>';
@@ -42,4 +42,11 @@ var init = function () {
     })
 };
 
+function getDescribe(content) {
+    var describe = content==undefined || content ==null ? "暂无描述":content;
+    if(describe.length>50){
+        return describe.substr(0,50);
+    }
+    return describe;
+}
 init();
