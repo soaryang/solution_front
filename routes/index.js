@@ -83,6 +83,7 @@ router.get("/login/githubLogin", function (req, res, next) {
                 'url': urlStr
 
             }
+            console.log('url:'+urlStr);
             request(options2, function (error, response, resbody) {
                 if (!error) {
                     /*res.end(JSON.stringify({
