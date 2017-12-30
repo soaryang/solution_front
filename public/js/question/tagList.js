@@ -45,7 +45,7 @@ var init = function () {
 function getDescribe(content) {
     var describe = content==undefined || content ==null ? "暂无描述":content;
     if(describe.length>50){
-        return describe.substr(0,120);
+        return describe.substr(0,80);
     }
     return describe;
 }
