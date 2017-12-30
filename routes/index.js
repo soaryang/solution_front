@@ -94,7 +94,7 @@ router.get("/login/githubLogin", function (req, res, next) {
 
 
                     console.log('==========='+resbody);
-                    var userObject = JSON.parse(resbody.data);
+                    var userObject = JSON.parse(resbody);
                     console.log('------------------'+userObject);
                     /*var postData = querystring.stringify({
                         'msg': 'Hello World!'
