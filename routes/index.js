@@ -24,7 +24,8 @@ var githubConfig = {
 router.get('/', function (req, res, next) {
     //function(res,host,port,url,data,method,contentType){
     //test.say(res);
-
+    console.log('ClientID==========>'+process.env.ClientID);
+    console.log('ClientSecret==========>'+process.env.ClientSecret);
     res.render('index', {title: 'Express'});
 });
 
