@@ -7,9 +7,9 @@ var querystring = require('querystring');
 var httpUtil = require('../util/httpUtil');
 var githubConfig = {
     // 客户ID
-    client_ID: 'a5a36494dfb0fa76a60b',
+    //client_ID: 'a5a36494dfb0fa76a60b',
     // 客户密匙
-    client_Secret: '58c6417b218516158be0b64f4f5066f2002e64dc',
+    //client_Secret: '58c6417b218516158be0b64f4f5066f2002e64dc',
     // 获取 access_token
     // eg: https://github.com/login/oauth/access_token?client_id=7***************6&client_secret=4***************f&code=9dbc60118572de060db4&redirect_uri=http://manage.hgdqdev.cn/#/login
     access_token_url: 'https://github.com/login/oauth/access_token',
@@ -69,8 +69,8 @@ router.get("/login/githubLogin", function (req, res, next) {
         'method': 'post',
         'url': githubConfig.access_token_url,
         'form': {
-            client_id: githubConfig.client_ID,
-            client_secret: githubConfig.client_Secret,
+            client_id: process.env.ClientID,
+            client_secret: process.env.ClientSecret,
             code: code,
             redirect_uri: githubConfig.redirect_uri
         }
