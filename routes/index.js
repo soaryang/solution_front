@@ -104,7 +104,7 @@ router.get("/login/githubLogin", function (req, res, next) {
 
                     console.log('==========='+resbody);
                     var data = JSON.parse(resbody);
-                    //data = require('querystring').stringify(data);
+                    data = require('querystring').stringify(data);
                     console.log(data);
                     var opt = {
                         method: "POST",
