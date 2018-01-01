@@ -103,7 +103,7 @@ router.get("/login/githubLogin", function (req, res, next) {
 
 
                     console.log('==========='+resbody);
-                    //var data = JSON.parse(resbody);
+                    var data = JSON.parse(resbody);
                     //data = require('querystring').stringify(data);
                     console.log(data);
                     var opt = {
@@ -113,7 +113,7 @@ router.get("/login/githubLogin", function (req, res, next) {
                         path: "/v1/api/github/userAdd",
                         headers: {
                             "Content-Type": 'application/x-www-form-urlencoded',
-                            "Content-Length": resbody.length
+                            "Content-Length": data.length
                         }
                     };
                     var req = http.request(opt, function (serverFeedback) {
