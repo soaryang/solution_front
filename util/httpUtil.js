@@ -1,12 +1,12 @@
 
 var http = require("http");
 var httpObject = {
-    post:function(host,port,url,data,contentType){
+    post:function(res,host,port,url,data,method,contentType){
         var options = {
             host:host,
             port:port,
             path:url,
-            method:'post',
+            method:method,
             headers:{
                 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36',
                 //'Content-Type' : 'application/x-www-form-urlencoded',// 不写这个参数，后台会接收不到数据
