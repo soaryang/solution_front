@@ -115,6 +115,8 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 body += data;
                             }).on('end', function () {
                                 //response.send(200, body);
+                                var result = JSON.parse(body);
+                                console.log(result);
                                 res.render('index', {title: 'Express'});
                             });
                         }
