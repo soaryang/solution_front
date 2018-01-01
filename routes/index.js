@@ -114,12 +114,12 @@ router.get("/login/githubLogin", function (req, res, next) {
                             feedback.on('data', function (data) {
                                 body += data;
                             }).on('end', function () {
-                                response.send(200, body);
+                                //response.send(200, body);
                                 res.render('index', {title: 'Express'});
                             });
                         }
                         else {
-                            response.send(500, "error");
+                            //response.send(500, "error");
                         }
                     });
                     req.write(data + "\n");
