@@ -119,6 +119,7 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 var result = JSON.parse(body);
                                 console.log(result);
                                 res.cookie('isVisit', 1, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
+                                res.cookie('isVisit2', 2, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
                                 res.render('index', {title: 'Express'});
                             });
                         }
