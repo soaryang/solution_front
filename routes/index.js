@@ -98,7 +98,7 @@ router.get("/login/githubLogin", function (req, res, next) {
                     console.log('==========='+resbody);
                     var userObject = JSON.parse(resbody);
                     var dataObject  = {
-                        'userInfo':resbody
+                        'userInfo':userObject
                     }
 
                     var data = require('querystring').stringify(dataObject);
