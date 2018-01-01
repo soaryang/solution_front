@@ -96,11 +96,16 @@ router.get("/login/githubLogin", function (req, res, next) {
 
 
                     console.log('==========='+resbody);
-                    var userObject = JSON.parse(resbody);
+                    //var userObject = JSON.parse(resbody);
+                    var dataObject  = {
+                        'userInfo':resbody
+                    }
+
+                    var data = require('querystring').stringify(dataObject);
                     console.log('------------------'+userObject);
 
                     //post:function(res,host,port,url,data,method,contentType){
-                    httpUtil.post('localhost',80,'v1/api/github/userAdd',{'userInfo':resbody},'application/x-www-form-urlencoded')
+                    httpUtil.post('localhost',80,'v1/api/github/userAdd',data,'application/x-www-form-urlencoded')
                     /*var postData = querystring.stringify({
                         'msg': 'Hello World!'
                     });*/
