@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var cookieParser = require('cookie-parser');
 var http = require("http");
 var test = require('../util/test');
 var querystring = require('querystring');
@@ -117,6 +118,7 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 //response.send(200, body);
                                 var result = JSON.parse(body);
                                 console.log(result);
+                                res.cookie('isVisit', 1, {maxAge: 60 * 1000});
                                 res.render('index', {title: 'Express'});
                             });
                         }
