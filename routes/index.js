@@ -24,8 +24,15 @@ var githubConfig = {
 router.get('/', function (req, res, next) {
     //function(res,host,port,url,data,method,contentType){
     //test.say(res);
-    console.log('ClientID==========>'+process.env.ClientID);
-    console.log('ClientSecret==========>'+process.env.ClientSecret);
+    //console.log('ClientID==========>'+process.env.ClientID);
+    //console.log('ClientSecret==========>'+process.env.ClientSecret);
+    /*var data = {
+        'userInfo':{
+            'data':'1231232122'
+        }
+    }
+    httpUtil.post('127.0.0.1',80,'/v1/api/github/userAdd',data,'application/x-www-form-urlencoded')*/
+
     res.render('index', {title: 'Express'});
 });
 
@@ -97,18 +104,40 @@ router.get("/login/githubLogin", function (req, res, next) {
 
                     console.log('==========='+resbody);
                     var userObject = JSON.parse(resbody);
-                    var dataObject  = {
+                    /*var dataObject  = {
                         'userInfo':userObject
                     }
 
                     var data = require('querystring').stringify(dataObject);
-                    console.log('------------------'+userObject);
+                    console.log('------------------'+userObject);*/
 
-                    //post:function(res,host,port,url,data,method,contentType){
-                    httpUtil.post('localhost',80,'v1/api/github/userAdd',data,'application/x-www-form-urlencoded')
-                    /*var postData = querystring.stringify({
-                        'msg': 'Hello World!'
-                    });*/
+                    var data = JSON.parse(resbody);
+
+                    data = require('querystring').stringify(data);
+                    console.log(data);
+                    var opt = {
+                        method: "POST",
+                        host: "localhost",
+                        port: 80,
+                        path: "/v1/api/github/userAdd",
+                        headers: {
+                            "Content-Type": 'application/x-www-form-urlencoded',
+                            "Content-Length": data.length
+                        }
+                    };
+
+                    var req = http.request(opt, function (serverFeedback) {
+                        if (serverFeedback.statusCode == 200) {
+                            var body = "";
+                            serverFeedback.on('data', function (data) { body += data; })
+                                .on('end', function () { res.send(200, body); });
+                        }
+                        else {
+                            res.send(500, "error");
+                        }
+                    });
+                    req.write(data + "\n");
+                    req.end();
                 } else {
                     res.end(JSON.stringify({
                         msg: '获取用户信息失败',
