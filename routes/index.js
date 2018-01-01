@@ -98,6 +98,9 @@ router.get("/login/githubLogin", function (req, res, next) {
                     console.log('==========='+resbody);
                     var userObject = JSON.parse(resbody);
                     console.log('------------------'+userObject);
+
+                    //post:function(res,host,port,url,data,method,contentType){
+                    httpUtil.post('localhost',80,'v1/api/github/userAdd',{'userInfo':resbody},'application/x-www-form-urlencoded')
                     /*var postData = querystring.stringify({
                         'msg': 'Hello World!'
                     });*/
