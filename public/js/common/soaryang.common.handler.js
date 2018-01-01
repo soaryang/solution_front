@@ -40,4 +40,8 @@ var navbarSelect = function () {
     }
 }
 
+var initUserInfo = function () {
+   console.log('cookie====='+$.cookie('name'));
+}
+
 
