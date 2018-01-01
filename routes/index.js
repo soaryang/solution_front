@@ -118,8 +118,8 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 //response.send(200, body);
                                 var result = JSON.parse(body);
                                 console.log(result);
-                                res.cookie('isVisit', 1, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
-                                res.cookie('isVisit2', 2, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
+                                res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
+                                res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
                                 res.render('index', {title: 'Express'});
                             });
                         }
