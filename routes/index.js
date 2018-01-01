@@ -89,19 +89,11 @@ router.get("/login/githubLogin", function (req, res, next) {
             var options2 = {
                 'url': urlStr,
                 'headers': {
-                    'User-Agent': 'misiteyang'
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36'
                 }
-        }
-            console.log('url:'+urlStr);
+            }
             request(options2, function (error, response, resbody) {
                 if (!error) {
-                    /*res.end(JSON.stringify({
-                        msg: '获取成功',
-                        status: 100,
-                        data: JSON.parse(resbody.data)
-                    }));*/
-
-
                     console.log('==========='+resbody);
                     var data = JSON.parse(resbody);
                     data = require('querystring').stringify(data);
@@ -116,14 +108,18 @@ router.get("/login/githubLogin", function (req, res, next) {
                             "Content-Length": data.length
                         }
                     };
-                    var req = http.request(opt, function (serverFeedback) {
-                        if (serverFeedback.statusCode == 200) {
+                    var req = http.request(opt, function (feedback) {
+                        if (feedback.statusCode == 200) {
                             var body = "";
-                            serverFeedback.on('data', function (data) { body += data; })
-                                .on('end', function () { res.send(200, body); });
+                            feedback.on('data', function (data) {
+                                body += data;
+                            }).on('end', function () {
+                                response.send(200, body);
+                                res.render('index', {title: 'Express'});
+                            });
                         }
                         else {
-                            res.send(500, "error");
+                            response.send(500, "error");
                         }
                     });
                     req.write(data + "\n");
@@ -133,64 +129,12 @@ router.get("/login/githubLogin", function (req, res, next) {
                         msg: '获取用户信息失败',
                         status: 102
                     }));
-                    res.render('index', {title: 'Express'});
                 }
             })
-
-
         } else {
             console.log('error');
         }
     })
-    /*request({
-    url: githubConfig.access_token_url,
-    form: {
-        client_id: githubConfig.client_ID,
-        client_secret: githubConfig.client_Secret,
-        code: code,
-        redirect_uri: githubConfig.redirect_uri
-    }},
-    function(error, response, body){
-        if (!error && response.statusCode == 200) {
-            var urlStr = githubConfig.user_info_url + body;
-            request({
-                    url: urlStr,
-                    headers: {
-                        'User-Agent': 'zhuming3834'
-                    }
-                },
-                function(error, response, resbody){
-                    if (!error) {
-                        /*res.end(JSON.stringify({
-                            msg: '获取成功',
-                            status: 100,
-                            data: JSON.parse(resbody.data)
-                        }));
-
-                        var userObject = JSON.parse(resbody);
-                        console.log('------------------');
-                        var postData = querystring.stringify({
-                            'msg' : 'Hello World!'
-                        });
-                        httpUtil.post(res,'127.0.0.1',80,'/v1/node/Http',querystring.stringify(userObject),'POST','application/x-www-form-urlencoded')
-                        //res.render('index', { title: 'Express' });
-                    }else{
-                        res.end(JSON.stringify({
-                            msg: '获取用户信息失败',
-                            status: 102
-                        }));
-                        res.render('index', { title: 'Express' });
-                    }
-                }
-            )
-        }else{
-            res.end(JSON.stringify({
-                msg: '获取用户信息失败',
-                status: 101
-            }));
-        }
-    }
-    )*/
 })
 
 router.all('/api/github/user_info', function (req, res, next) {
