@@ -103,17 +103,8 @@ router.get("/login/githubLogin", function (req, res, next) {
 
 
                     console.log('==========='+resbody);
-                    var userObject = JSON.parse(resbody);
-                    /*var dataObject  = {
-                        'userInfo':userObject
-                    }
-
-                    var data = require('querystring').stringify(dataObject);
-                    console.log('------------------'+userObject);*/
-
-                    var data = JSON.parse(resbody);
-
-                    data = require('querystring').stringify(data);
+                    //var data = JSON.parse(resbody);
+                    //data = require('querystring').stringify(data);
                     console.log(data);
                     var opt = {
                         method: "POST",
@@ -122,10 +113,9 @@ router.get("/login/githubLogin", function (req, res, next) {
                         path: "/v1/api/github/userAdd",
                         headers: {
                             "Content-Type": 'application/x-www-form-urlencoded',
-                            "Content-Length": data.length
+                            "Content-Length": resbody.length
                         }
                     };
-
                     var req = http.request(opt, function (serverFeedback) {
                         if (serverFeedback.statusCode == 200) {
                             var body = "";
