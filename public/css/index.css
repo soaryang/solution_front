@@ -6,28 +6,21 @@
     margin-left: auto;
     margin-right: auto;
 }
-.tagLine{
+.tagList{
 }
-.tagLine .tagCell{
+.tagList .tagCell{
 
 }
-.tagImage{
-    width: 50px;
-    height: 50px;
+.tagList .tagCell .tagImageDiv{
+    margin-bottom: 0px;
+}
+.tagList .tagCell .tagImageDiv .tagImage{
+
+    height: 100px;
+    width: 100px;
 }
 
-.tagLine .tagCell .tagCellContent{
-    border: 1px solid rgba(34,36,38,.15);
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    border-radius: .28571429rem;
-    min-height: 80px;
-    text-align: center;
-}
 
-.tagLine .tagCell .tagImage{
-    width: 50px;
-    height: 50px;
-}
 
 .get {
     background: #1E5B94;
