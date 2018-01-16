@@ -1,7 +1,7 @@
 var OneTag =  React.createClass({
     render:function () {
         return <li className="tagCell">
-                    <a href="/questionList/'+data[i].id+'">
+                    <a href={"/questionList/"+this.props.data.id}>
                         <div className="am-thumbnail tagImageDiv">
                             <img className="tagImage" src={"http://www.yangtengfei.cn/images"+this.props.data.imagePath} />
                         </div>
