@@ -1,15 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var cookieParser = require('cookie-parser');
 var http = require("http");
 var test = require('../util/test');
 var querystring = require('querystring');
 var httpUtil = require('../util/httpUtil');
 var githubConfig = {
     // 客户ID
-    client_ID: 'a5a36494dfb0fa76a60b',
+    //client_ID: 'a5a36494dfb0fa76a60b',
     // 客户密匙
-    client_Secret: '58c6417b218516158be0b64f4f5066f2002e64dc',
+    //client_Secret: '58c6417b218516158be0b64f4f5066f2002e64dc',
     // 获取 access_token
     // eg: https://github.com/login/oauth/access_token?client_id=7***************6&client_secret=4***************f&code=9dbc60118572de060db4&redirect_uri=http://manage.hgdqdev.cn/#/login
     access_token_url: 'https://github.com/login/oauth/access_token',
@@ -24,6 +25,14 @@ var githubConfig = {
 router.get('/', function (req, res, next) {
     //function(res,host,port,url,data,method,contentType){
     //test.say(res);
+    //console.log('ClientID==========>'+process.env.ClientID);
+    //console.log('ClientSecret==========>'+process.env.ClientSecret);
+    /*var data = {
+        'userInfo':{
+            'data':'1231232122'
+        }
+    }
+    httpUtil.post('127.0.0.1',80,'/v1/api/github/userAdd',data,'application/x-www-form-urlencoded')*/
 
     res.render('index', {title: 'Express'});
 });
@@ -68,8 +77,8 @@ router.get("/login/githubLogin", function (req, res, next) {
         'method': 'post',
         'url': githubConfig.access_token_url,
         'form': {
-            client_id: githubConfig.client_ID,
-            client_secret: githubConfig.client_Secret,
+            client_id: process.env.ClientID,
+            client_secret: process.env.ClientSecret,
             code: code,
             redirect_uri: githubConfig.redirect_uri
         }
@@ -79,87 +88,58 @@ router.get("/login/githubLogin", function (req, res, next) {
             console.log('body======' + body);
             var urlStr = githubConfig.user_info_url + body;
             var options2 = {
-                'url': urlStr
-
+                'url': urlStr,
+                'headers': {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36'
+                }
             }
             request(options2, function (error, response, resbody) {
                 if (!error) {
-                    /*res.end(JSON.stringify({
-                        msg: '获取成功',
-                        status: 100,
-                        data: JSON.parse(resbody.data)
-                    }));*/
-
-
                     console.log('==========='+resbody);
-                    /*var userObject = JSON.parse(resbody.data);
-                    console.log('------------------'+userObject);
-                    var postData = querystring.stringify({
-                        'msg': 'Hello World!'
-                    });*/
+                    var data = JSON.parse(resbody);
+                    data = require('querystring').stringify(data);
+                    console.log(data);
+                    var opt = {
+                        method: "POST",
+                        host: "localhost",
+                        port: 80,
+                        path: "/v1/api/github/userAdd",
+                        headers: {
+                            "Content-Type": 'application/x-www-form-urlencoded',
+                            "Content-Length": data.length
+                        }
+                    };
+                    var req = http.request(opt, function (feedback) {
+                        if (feedback.statusCode == 200) {
+                            var body = "";
+                            feedback.on('data', function (data) {
+                                body += data;
+                            }).on('end', function () {
+                                //response.send(200, body);
+                                var result = JSON.parse(body);
+                                console.log(result);
+                                res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
+                                res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
+                                res.render('index', {title: 'Express'});
+                            });
+                        }
+                        else {
+                            //response.send(500, "error");
+                        }
+                    });
+                    req.write(data + "\n");
+                    req.end();
                 } else {
                     res.end(JSON.stringify({
                         msg: '获取用户信息失败',
                         status: 102
                     }));
-                    res.render('index', {title: 'Express'});
                 }
             })
-
-
         } else {
             console.log('error');
         }
     })
-    /*request({
-    url: githubConfig.access_token_url,
-    form: {
-        client_id: githubConfig.client_ID,
-        client_secret: githubConfig.client_Secret,
-        code: code,
-        redirect_uri: githubConfig.redirect_uri
-    }},
-    function(error, response, body){
-        if (!error && response.statusCode == 200) {
-            var urlStr = githubConfig.user_info_url + body;
-            request({
-                    url: urlStr,
-                    headers: {
-                        'User-Agent': 'zhuming3834'
-                    }
-                },
-                function(error, response, resbody){
-                    if (!error) {
-                        /*res.end(JSON.stringify({
-                            msg: '获取成功',
-                            status: 100,
-                            data: JSON.parse(resbody.data)
-                        }));
-
-                        var userObject = JSON.parse(resbody);
-                        console.log('------------------');
-                        var postData = querystring.stringify({
-                            'msg' : 'Hello World!'
-                        });
-                        httpUtil.post(res,'127.0.0.1',80,'/v1/node/Http',querystring.stringify(userObject),'POST','application/x-www-form-urlencoded')
-                        //res.render('index', { title: 'Express' });
-                    }else{
-                        res.end(JSON.stringify({
-                            msg: '获取用户信息失败',
-                            status: 102
-                        }));
-                        res.render('index', { title: 'Express' });
-                    }
-                }
-            )
-        }else{
-            res.end(JSON.stringify({
-                msg: '获取用户信息失败',
-                status: 101
-            }));
-        }
-    }
-    )*/
 })
 
 router.all('/api/github/user_info', function (req, res, next) {
