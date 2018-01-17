@@ -80,7 +80,7 @@ router.get("/login/githubLogin", function (req, res, next) {
             client_id: process.env.ClientID,
             client_secret: process.env.ClientSecret,
             code: code,
-            redirect_uri: githubConfig.redirect_uri
+            redirect_uri: "/"
         }
     };
     request(options, function (error, response, body) {
