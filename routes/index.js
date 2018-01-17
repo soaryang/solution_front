@@ -120,7 +120,8 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 console.log(result);
                                 res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
                                 res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
-                                res.render('index', {title: 'Express'});
+                                //res.render('index', {title: 'Express'});
+                                res.redirect("/")
                             });
                         }
                         else {
