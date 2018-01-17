@@ -38,17 +38,21 @@ var TagPlug = React.createClass({
             for(var i=0; i<array.length; i++){
                 options.push(<OneTag data={array[i]}/>)
             }
+            options.push(<li className="tagCell">
+                <a href="/tagList">
+                    <div className="am-thumbnail tagImageDiv">
+                        <img className="tagImage" src="http://www.yangtengfei.cn/images/common/more.jpg" />
+                    </div>
+                </a>
+            </li>)
+            return <ul className="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails tagList">
+                {options}
+            </ul>;
+        }else{
+            return <ul className="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails tagList">
+                {"没有数据"}
+            </ul>;
         }
-        options.push(<li className="tagCell">
-                        <a href="/tagList">
-                            <div className="am-thumbnail tagImageDiv">
-                                <img className="tagImage" src="http://www.yangtengfei.cn/images/common/more.jpg" />
-                            </div>
-                        </a>
-                    </li>)
-        return <ul className="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails tagList">
-            {options}
-                </ul>;
     }
 });
 ReactDOM.render(<TagPlug />,document.getElementById('tag'));
