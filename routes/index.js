@@ -33,8 +33,8 @@ router.get('/', function (req, res, next) {
         }
     }
     httpUtil.post('127.0.0.1',80,'/v1/api/github/userAdd',data,'application/x-www-form-urlencoded')*/
-    //res.cookie('name', "1211121212", {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
-    //res.cookie('avatar_url', "22222222222222222", {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+    //res.cookie('name', "1211121212", {maxAge: 60*60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+    //res.cookie('avatar_url', "22222222222222222", {maxAge: 60*60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
 
     res.render('index', {title: 'Express'});
 });
