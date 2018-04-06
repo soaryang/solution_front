@@ -33,6 +33,8 @@ router.get('/', function (req, res, next) {
         }
     }
     httpUtil.post('127.0.0.1',80,'/v1/api/github/userAdd',data,'application/x-www-form-urlencoded')*/
+    //res.cookie('name', "1211121212", {maxAge: 60*60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+    //res.cookie('avatar_url', "22222222222222222", {maxAge: 60*60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
 
     res.render('index', {title: 'Express'});
 });
@@ -60,6 +62,7 @@ router.get("/question/:id", function (req, res, next) {
     console.log("id:" + id);
     res.render('question/questionInfo', {questionId: id});
 })
+
 
 router.get("/login/githubLogin", function (req, res, next) {
     console.log('=================>' + req.query.code);
@@ -118,9 +121,12 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 //response.send(200, body);
                                 var result = JSON.parse(body);
                                 console.log(result);
-                                res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
-                                res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: '.yangtengfei.cn'});
-                                res.render('index', {title: 'Express'});
+
+
+                                res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+                                res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+                                res.render('jump', {title: 'Express'});
+                                //res.redirect("/")
                             });
                         }
                         else {

@@ -100,17 +100,3 @@ var init = function (index, type) {
     })
 };
 init(1, 1);
-
-/*function setTitle(type) {
-    init(1, type);
-    var size = $(".title li").length;
-    for (var i = 1; i <= size; i++) {
-        if (type == i) {
-            $(".question_" + i).show();
-            $(".question_" + i + "_li").addClass("active")
-        } else {
-            $(".question_" + i).hide();
-            $(".question_" + i + "_li").remove("active")
-        }
-    }
-};*/
