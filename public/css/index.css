@@ -6,11 +6,10 @@
     margin-left: auto;
     margin-right: auto;
 }
-.tagLine{
-}
-.tagLine .tagCell{
 
-}
+
+
+
 .tagImage{
     width: 50px;
     height: 50px;
@@ -28,31 +27,6 @@
     width: 50px;
     height: 50px;
 }
-
-.get {
-    background: #1E5B94;
-    color: #fff;
-    padding: 50px 0px 20px 0px;
-}
-
-.about {
-    background: #fff;
-    padding: 20px 0;
-    color: #7f8c8d;
-}
-
-
-.about-color {
-    color: #34495e;
-}
-
-.about-title {
-    font-size: 180%;
-    padding: 30px 0 50px 0;
-    text-align: center;
-}
-
-
 
 .questionItem{
     font: 16px Arial, Helvetica, sans-serif;
@@ -102,24 +76,3 @@
     transition: all .15s ease-in-out;
 }
 
-
-/*.questionItem .detail .tag {
-    position: relative;
-    display: inline-block;
-    padding: .4em .5em;
-    margin: 2px 2px 2px 0;
-    font-size: 11px;
-    line-height: 1;
-    white-space: nowrap;
-    text-decoration: none;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #00aaaa;
-    border-radius: 90%;
-    transition: all .15s ease-in-out;
-}*/
-
-.webSiteInfo{
-
-}
