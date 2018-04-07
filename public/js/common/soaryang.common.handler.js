@@ -42,7 +42,7 @@ var navbarSelect = function () {
 
 var initUserInfo = function () {
    //console.log('cookie====='+$.cookie('key'));
-    var key = $.cookie('key');
+    var key = $.cookie('auth_key');
     if(key!=null){
         //请求获取用户信息：
         var url = '/v1/front/user/info' ;
