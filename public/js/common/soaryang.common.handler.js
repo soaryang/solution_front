@@ -41,8 +41,7 @@ var navbarSelect = function () {
 }
 
 var initUserInfo = function () {
-   console.log('cookie====='+$.cookie('name'));
-   console.log('avatar_url======='+$.cookie('avatar_url'));
+   console.log('cookie====='+$.cookie('key'));
 }
 
 
