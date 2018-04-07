@@ -17,3 +17,12 @@ body{
     text-align: center;
     background: #2d3e50;
 }
+
+.userImage{
+    width: 100px;
+    height: 100px;
+    background-color:red;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}

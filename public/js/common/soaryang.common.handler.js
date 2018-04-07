@@ -49,7 +49,7 @@ var initUserInfo = function () {
         soaryang.getAjax(url,null,function (data) {
             //console.log(data);
             if(data.code==200 && data.data!=null){
-                $("#userSpan").html('<image src="'+data.data.avatar_url+'">');
+                $("#userSpan").html('<image class="userImage" src="'+data.data.avatar_url+'"/>');
             }else{
                 $("#userSpan").html('<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登陆</button>');
             }
