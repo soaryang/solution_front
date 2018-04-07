@@ -12,6 +12,8 @@ $(".tab2").click(function(){
     init(1,2);
 })
 var init = function (index, type) {
+    //获取头像数据
+
 
     for(var i=1; i<=3; i++){
         if(i==type){

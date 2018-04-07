@@ -10,6 +10,15 @@ function doShowContent(){
             $(".questionName").html(jsonObject.name);
             $(".tagName").html(jsonObject.tagName);
             showSolution($("#questionId").val());
+            /*var id = "test-editormd-view";
+            var solutionArray = jsonObject.solutionViewList;
+            var solutionListDiv = $(".solutionList");
+            for(var i=0; i<solutionArray.length; i++){
+                var id = "test-editormd-view"+i;
+                var contentDiv= '<div id="'+id+'" style="border: 1px solid rgb(221, 221, 221);"></div>'
+                solutionListDiv.append($(contentDiv));
+                initEdit(id,solutionArray[i].content);
+            }*/
         }
     },function (data) {
 
@@ -30,14 +39,6 @@ function showSolution(questionId) {
                  solutionListDiv.append($(contentDiv));
                  initEdit(id,solutionArray[i].content);
              }
-            /*var solutionArray = data.data;
-            var solutionListDiv = $(".solutionList");
-            for(var i=0; i<solutionArray.length; i++){
-                var converter = new showdown.Converter();
-                solutionListDiv.append(converter.makeHtml(solutionArray[i].content));
-                //console.log(html);
-            }*/
-
         }
     },function (data) {
 
@@ -51,6 +52,7 @@ function initEdit(id,content) {
             height       : 720
         });
     }
+
     testEditormdView =editormd.markdownToHTML(id,{
         markdown: content,//
         tocm            : true,    // Using [TOCM]
@@ -63,5 +65,6 @@ function initEdit(id,content) {
         theme:"dark"
     });
 }
+
 doShowContent();
 

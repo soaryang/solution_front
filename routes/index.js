@@ -123,8 +123,9 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 console.log(result);
 
 
-                                res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
-                                res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+                                //res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+                                //res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+                                res.cookie('key', result.data.avatar_url, {maxAge: 60* 60* 24 * 7,path: '/',domain: 'www.yangtengfei.cn'});
                                 res.render('jump', {title: 'Express'});
                                 //res.redirect("/")
                             });
