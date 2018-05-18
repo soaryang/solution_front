@@ -32,7 +32,7 @@ var init = function (index, type) {
                 html+='<li>';
                 html+='<a href="/questionList/'+data[i].id+'">';
                 html+='<div class="am-thumbnail" style="margin-bottom: 0px;">';
-                html+='<img  style="margin-bottom: 0px; height: 100px; width: 100px;" src="http://www.yangtengfei.cn/images'+tempData.imagePath+'" />';
+                html+='<img  style="margin-bottom: 0px; height: 100px; width: 100px;" src="http://www.51jieguo.com/images'+tempData.imagePath+'" />';
                 //html+=tempData.name;
                 html+='</div>';
                 html+='</a>';
@@ -41,7 +41,7 @@ var init = function (index, type) {
             html+='<li>';
             html+='<a href="/tagList">';
             html+='<div class="am-thumbnail" style="margin-bottom: 0px;">';
-            html+='<img  style="margin-bottom: 0px; height: 100px; width: 200px;" src="http://www.yangtengfei.cn/images/common/more.jpg" />';
+            html+='<img  style="margin-bottom: 0px; height: 100px; width: 200px;" src="http://www.51jieguo.com/images/common/more.jpg" />';
             //html+=tempData.name;
             html+='</div>';
             html+='</a>';
@@ -74,7 +74,7 @@ var init = function (index, type) {
                 for (var i = 0; i < array.length; i++) {
                     var questionObject = array[i];
                     html+='<div class="questionItem">';
-                    html+='<img src="http://www.yangtengfei.cn/images/wechat.jpg" width="70" height="70" alt="" style="float: left;"/>';
+                    html+='<img src="http://www.51jieguo.com/images/wechat.jpg" width="70" height="70" alt="" style="float: left;"/>';
                     html+='<div class="detail">';
                     html+='<h3 style="margin-left:80px;">';
                     html+='<a href="/question/'+questionObject.id+'">'+questionObject.name+'</a>';

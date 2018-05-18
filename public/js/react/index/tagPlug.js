@@ -3,7 +3,7 @@ var OneTag =  React.createClass({
         return <li className="tagCell">
                     <a href={"/questionList/"+this.props.data.id}>
                         <div className="am-thumbnail tagImageDiv">
-                            <img className="tagImage" src={"http://www.yangtengfei.cn/images"+this.props.data.imagePath} />
+                            <img className="tagImage" src={"http://www.51jieguo.com/images"+this.props.data.imagePath} />
                         </div>
                     </a>
                 </li>
@@ -41,7 +41,7 @@ var TagPlug = React.createClass({
             options.push(<li className="tagCell">
                 <a href="/tagList">
                     <div className="am-thumbnail tagImageDiv">
-                        <img className="tagImage" src="http://www.yangtengfei.cn/images/common/more.jpg" />
+                        <img className="tagImage" src="http://www.51jieguo.com/images/common/more.jpg" />
                     </div>
                 </a>
             </li>)

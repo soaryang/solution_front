@@ -54,7 +54,7 @@ var init = function (index, type) {
                 for (var i = 0; i < array.length; i++) {
                     var questionObject = array[i];
                     html+='<div class="questionItem">';
-                    html+='<img src="http://www.yangtengfei.cn/images/wechat.jpg" width="70" height="70" alt="" style="float: left;"/>';
+                    html+='<img src="http://www.51jieguo.com/images/wechat.jpg" width="70" height="70" alt="" style="float: left;"/>';
                     html+='<div class="detail">';
                     html+='<h3 style="margin-left:80px;">';
                     html+='<a href="/question/'+questionObject.id+'">'+questionObject.name+'</a>';
