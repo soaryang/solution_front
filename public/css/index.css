@@ -1,4 +1,4 @@
-.mainContainer{
+.mainContainer {
     margin-top: 10px;
     width: 100%;
     max-width: 1000px;
@@ -7,28 +7,25 @@
     margin-right: auto;
 }
 
-
-
-
-.tagImage{
+.tagImage {
     width: 50px;
     height: 50px;
 }
 
-.tagLine .tagCell .tagCellContent{
-    border: 1px solid rgba(34,36,38,.15);
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+.tagLine .tagCell .tagCellContent {
+    border: 1px solid rgba(34, 36, 38, .15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     border-radius: .28571429rem;
     min-height: 80px;
     text-align: center;
 }
 
-.tagLine .tagCell .tagImage{
+.tagLine .tagCell .tagImage {
     width: 50px;
     height: 50px;
 }
 
-.questionItem{
+.questionItem {
     font: 16px Arial, Helvetica, sans-serif;
     text-align: left;
     /*border-bottom: solid 1px lightgray;*/
@@ -49,14 +46,14 @@
     color: #666666;
 }
 
-.questionItem .detail .other{
+.questionItem .detail .other {
 
 }
 
-.questionItem .detail .other .from{
+.questionItem .detail .other .from {
     color: #666;
     margin-right: 18px;
-    font: 12px Helvetica,Arial,sans-serif;
+    font: 12px Helvetica, Arial, sans-serif;
 }
 
 .questionItem .detail .tag {
@@ -76,3 +73,11 @@
     transition: all .15s ease-in-out;
 }
 
+.side-bar {
+    position: fixed;
+    bottom: 400px;
+    right: 10px;
+    font-size: 0;
+    z-index: 100;
+    border: 1px solid gray;
+}

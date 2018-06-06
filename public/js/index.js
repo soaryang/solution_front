@@ -34,7 +34,7 @@ var init = function (index, type) {
                 html+='<li>';
                 html+='<a href="/questionList/'+data[i].id+'">';
                 html+='<div class="am-thumbnail" style="margin-bottom: 0px;">';
-                html+='<img  style="margin-bottom: 0px; height: 100%;width: 100%" src="http://www.51jieguo.com/images'+tempData.imagePath+'" />';
+                html+='<img  style="margin-bottom: 0px; height: 100px; width: 100px;" src="http://www.51jieguo.com/images'+tempData.imagePath+'" />';
                 //html+=tempData.name;
                 html+='</div>';
                 html+='</a>';
