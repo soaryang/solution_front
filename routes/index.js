@@ -18,24 +18,11 @@ var githubConfig = {
     // eg: https://api.github.com/user?access_token=86664b010dbb841a86d4ecc38dfeb8ac673b9430&scope=&token_type=bearer
     user_info_url: 'https://api.github.com/user?',
     // 回调地址
-    redirect_uri: 'http://www.yangtengfei.cn/login/githubLogin'
+    redirect_uri: 'http://www.51jieguo.com/login/githubLogin'
 }
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    //function(res,host,port,url,data,method,contentType){
-    //test.say(res);
-    //console.log('ClientID==========>'+process.env.ClientID);
-    //console.log('ClientSecret==========>'+process.env.ClientSecret);
-    /*var data = {
-        'userInfo':{
-            'data':'1231232122'
-        }
-    }
-    httpUtil.post('127.0.0.1',80,'/v1/api/github/userAdd',data,'application/x-www-form-urlencoded')*/
-    //res.cookie('name', "1211121212", {maxAge: 60*60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
-    //res.cookie('avatar_url', "22222222222222222", {maxAge: 60*60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
-
     res.render('index', {title: 'Express'});
 });
 
@@ -122,9 +109,10 @@ router.get("/login/githubLogin", function (req, res, next) {
                                 var result = JSON.parse(body);
                                 console.log(result);
 
-
-                                res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
-                                res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: 'www.yangtengfei.cn'});
+                                //res.cookie('name', result.data.nick, {maxAge: 60 * 1000,path: '/',domain: 'www.51jieguo.com'});
+                                //res.cookie('avatar_url', result.data.avatar_url, {maxAge: 60 * 1000,path: '/',domain: 'www.51jieguo.com'});
+                                console.log('======================'+ result.data.key);
+                                res.cookie('auth_key', encodeURI(result.data.key), {maxAge: 60* 60* 24 * 7*1000,path: '/'});
                                 res.render('jump', {title: 'Express'});
                                 //res.redirect("/")
                             });

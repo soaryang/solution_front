@@ -1,4 +1,4 @@
-.mainContainer{
+.mainContainer {
     margin-top: 10px;
     width: 100%;
     max-width: 1000px;
@@ -6,48 +6,26 @@
     margin-left: auto;
     margin-right: auto;
 }
-.tagList{
-}
-.tagList .tagCell{
 
-}
-.tagList .tagCell .tagImageDiv{
-    margin-bottom: 0px;
-}
-.tagList .tagCell .tagImageDiv .tagImage{
-
-    height: 100px;
-    width: 100px;
+.tagImage {
+    width: 50px;
+    height: 50px;
 }
 
-
-
-.get {
-    background: #1E5B94;
-    color: #fff;
-    padding: 50px 0px 20px 0px;
-}
-
-.about {
-    background: #fff;
-    padding: 20px 0;
-    color: #7f8c8d;
-}
-
-
-.about-color {
-    color: #34495e;
-}
-
-.about-title {
-    font-size: 180%;
-    padding: 30px 0 50px 0;
+.tagLine .tagCell .tagCellContent {
+    border: 1px solid rgba(34, 36, 38, .15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    border-radius: .28571429rem;
+    min-height: 80px;
     text-align: center;
 }
 
+.tagLine .tagCell .tagImage {
+    width: 50px;
+    height: 50px;
+}
 
-
-.questionItem{
+.questionItem {
     font: 16px Arial, Helvetica, sans-serif;
     text-align: left;
     /*border-bottom: solid 1px lightgray;*/
@@ -68,14 +46,14 @@
     color: #666666;
 }
 
-.questionItem .detail .other{
+.questionItem .detail .other {
 
 }
 
-.questionItem .detail .other .from{
+.questionItem .detail .other .from {
     color: #666;
     margin-right: 18px;
-    font: 12px Helvetica,Arial,sans-serif;
+    font: 12px Helvetica, Arial, sans-serif;
 }
 
 .questionItem .detail .tag {
@@ -95,24 +73,11 @@
     transition: all .15s ease-in-out;
 }
 
-
-/*.questionItem .detail .tag {
-    position: relative;
-    display: inline-block;
-    padding: .4em .5em;
-    margin: 2px 2px 2px 0;
-    font-size: 11px;
-    line-height: 1;
-    white-space: nowrap;
-    text-decoration: none;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #00aaaa;
-    border-radius: 90%;
-    transition: all .15s ease-in-out;
-}*/
-
-.webSiteInfo{
-
+.side-bar {
+    position: fixed;
+    bottom: 400px;
+    right: 10px;
+    font-size: 0;
+    z-index: 100;
+    border: 1px solid gray;
 }

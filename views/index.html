@@ -1,44 +1,77 @@
 <%include common/header.html %>
 
-
-<div class="mainContainer">
-    <div id="tag">
-    </div>
-    <script type="text/babel" src="/js/react/index/tagPlug.js"></script>
-    <div class="am-g am-container" style="background: #1E5B94; color: #fff;padding: 10px 0px 10px 0px;">
+<!--
+<div class="get">
+    <div class="am-g am-container">
         <div class="am-u-lg-12">
             <div class="am-g">
-                <div class="am-u-lg-12 am-u-md-8 am-u-sm-12" data-am-scrollspy="{animation:'slide-left', repeat: false}">
-                    <h1>尽量做到最好,给您想要的结果</h1>
+                <div class="am-u-lg-6 am-u-md-8 am-u-sm-12" data-am-scrollspy="{animation:'slide-left', repeat: false}">
+                    <h4>分享，学习，成长</h4>
+                    <p>期待你加入社区</p>
+                    <p>为了一个想法：我要结果</p>
+                </div>
+                <div class="am-u-lg-6 am-u-md-4 am-u-sm-12"
+                     data-am-scrollspy="{animation:'slide-right', repeat: false}">
+                    <form class="am-form">
+                        <input id="name" type="text" placeholder="请输入姓名" style="width: 300px;"/>
+                        <input id="name" type="text" placeholder="请输入姓名" style="width: 300px;margin-top: 10px;"/>
+                        <input id="email" type="email" placeholder="请输入邮箱" style="width: 300px; margin-top: 10px;"/>
+                        <button type="submit" class="am-btn am-btn-primary am-btn-sm" style="margin-top: 10px;"><i
+                                class="am-icon-check"></i> 登 录
+                        </button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </div>
-    <div  class="am-g" style="margin-top: 10px;">
-        <div class="am-u-lg-12" style="padding-left: 0px; padding-right: 0px;">
-            <div class="am-u-lg-9" style="padding-left: 0px; padding-right: 0px;">
-                <ul class="am-nav am-nav-tabs">
-                    <li class="am-active tab1"><a class="am-icon-stack-overflow" href="javascipt:void(0)">&nbsp;最新问题</a></li>
-                    <li class="tab2"><a  class="am-icon-stack-overflow" href="javascipt:void(0)" >&nbsp;热门问题</a></li>
-                    <!--<li><a href="#">十万火急</a></li>-->
-                </ul>
-                <div class="am-tabs-bd" style="border: 0px;padding-left: 0px;">
-                    <div class="am-in am-active" id="tab1">
-                    </div>
-                    <div class="am-in am-active" id="tab2">
-                    </div>
-                </div>
-            </div>
-
-            <%include common/right.html %>
         </div>
     </div>
 </div>
+-->
+<div class="am-container main">
+    <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails tagList" style="margin-top: 10px;">
+    </ul>
+    <div class="am-u-lg-12" style="padding-left: 0px; padding-right: 0px;">
+        <div class="am-g">
+            <div class="am-u-lg-9" style="padding-left: 0px; padding-right: 0px;">
+                <div class="am-tabs" data-am-tabs>
+                    <ul class="am-tabs-nav am-nav am-nav-tabs">
+                        <li class="am-active tab1"><a href="#tab1">问题</a></li>
+                        <!--<li class="tab2"><a href="#tab2">热门</a></li>-->
+                    </ul>
+                    <div class="am-tabs-bd" style="border: 0px;padding-left: 0px;">
+                        <div class="am-tab-panel am-fade am-in am-active" id="tab1" style="padding-left: 0px; padding-right: 0px;">
+                        </div>
+                        <div class="am-tab-panel am-fade" id="tab2">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-u-lg-3" style="padding-right: 0px;">
+                <!--
+                <div style="border: 1px solid lightgray; text-align: left;">
+
+                    <div style="padding-left: 10px;color: red; padding-top: 10px;padding-bottom: 10px;">
+                        <span>在线交流</span>
+                        <div style="margin-top: 5px;">
+                            <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bfaf389e0b16886ec0502eb0946321a3c490086e0839bac7af2fa4c325771b8d"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="51结果社区群" title="51结果社区群"></a>
+                        </div>
+                    </div>
+
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="side-bar">
+    <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bfaf389e0b16886ec0502eb0946321a3c490086e0839bac7af2fa4c325771b8d">
+        <img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="51结果社区群" title="51结果社区群">
+    </a>
+</div>
+
 <%include common/footer.html %>
 <link rel="stylesheet" href="/css/index.css"/>
-<!--
-<script src="/plug/showdown/showdown.min.js"></script>
--->
 <script src="/js/index.js"></script>
 </body>
 </html>

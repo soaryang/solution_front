@@ -41,8 +41,18 @@ var navbarSelect = function () {
 }
 
 var initUserInfo = function () {
-   console.log('cookie====='+$.cookie('name'));
-   console.log('avatar_url======='+$.cookie('avatar_url'));
+   //console.log('cookie====='+$.cookie('key'));
+    var key = $.cookie('auth_key');
+    if(key!=null){
+        //请求获取用户信息：
+        var url = '/v1/front/user/info' ;
+        soaryang.getAjax(url,null,function (data) {
+            //console.log(data);
+            if(data.code==200 && data.data!=null){
+                $("#userSpan").empty().html('<image class="userImage" src="'+data.data.avatar_url+'"/>');
+            }
+        });
+    }
 }
 
 

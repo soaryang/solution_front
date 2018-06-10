@@ -7,13 +7,11 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var topic = require('./routes/topic');
 
 var app = express();
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'jade');
-//var ejs = require('ejs');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -32,9 +30,9 @@ app.use(function(req,res,next){
     console.log('Request URL:', req.originalUrl);
     console.log("log:"+req.host);
     if(req.originalUrl!=="/favicon.ico"){
+
         if(req.originalUrl.indexOf('/question')!=-1){
             next();
-            //return res.redirect('/question/questionInfo');
         }else if("/login" == req.originalUrl){
             next();
         }else{
@@ -46,12 +44,14 @@ app.use(function(req,res,next){
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/topic', topic);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
-  next(err);
+  //next(err);
+    res.render('index');
 });
 
 // error handler

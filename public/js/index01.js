@@ -12,8 +12,6 @@ $(".tab2").click(function(){
     init(1,2);
 })
 var init = function (index, type) {
-    //获取头像数据
-
 
     for(var i=1; i<=3; i++){
         if(i==type){
@@ -102,3 +100,17 @@ var init = function (index, type) {
     })
 };
 init(1, 1);
+
+/*function setTitle(type) {
+    init(1, type);
+    var size = $(".title li").length;
+    for (var i = 1; i <= size; i++) {
+        if (type == i) {
+            $(".question_" + i).show();
+            $(".question_" + i + "_li").addClass("active")
+        } else {
+            $(".question_" + i).hide();
+            $(".question_" + i + "_li").remove("active")
+        }
+    }
+};*/
