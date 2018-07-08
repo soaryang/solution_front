@@ -1,0 +1,41 @@
+<%include ../common/header.html %>
+
+<div class="am-container">
+    <br/>
+    <div class="am-g">
+        <div class="am-u-lg-12 questionDiv" id="questionAnswerDiv">
+            <div class="questionNameDiv">
+                <div style="border-bottom: 2px solid blue; margin-bottom: 10px;">
+                    <a class="articleName"></a>
+                </div>
+                <div>
+                    <label class="tagTitle">标签:</label>
+                    <span class="tagName am-badge am-badge-primary" ></span>
+                </div>
+            </div>
+            <div class="solutionList">
+            </div>
+        </div>
+
+        <!--
+        <div class="am-u-lg-4">
+            <div class="am-panel-group">
+                <section class="am-panel am-panel-default">
+                    <div class="am-panel-hd"><a class="questionName"></a></div>
+                    <div class="am-panel-bd">
+                        <p>点赞</p>
+                        <a class="am-btn am-btn-success am-btn-sm" href="#">查看更多 →</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+<input type="hidden" id="articleId" value="<%= articleId %>">
+<%include ../common/markdown.html%>
+<%include ../common/footer.html %>
+<link rel="stylesheet" href="/css/question/questionInfo.css"/>
+<script src="/js/article/articleInfo.js"></script>
+</body>
+</html>

@@ -35,6 +35,8 @@ var navbarSelect = function () {
     var pathName = window.location.pathname;
     if(pathName.indexOf("/tagList")!=-1){
         $("#tagPage").addClass("am-active")
+    }else if(pathName.indexOf("/article")!=-1){
+        $("#articlePage").addClass("am-active")
     }else{
         $("#indexPage").addClass("am-active")
     }
