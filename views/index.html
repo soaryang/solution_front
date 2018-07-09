@@ -1,4 +1,106 @@
-<%include common/header.html %>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>51结果</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-site-verification" content="USqadSx0dq" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="alternate icon" type="image/png" href="/plug/AmazeUI/i/favicon.png">
+    <link rel="stylesheet" href="/plug/AmazeUI/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/css/common.css"/>
+    <link href="/plug/markdown/css/editormd.css" rel="stylesheet" />
+
+    <!--<![endif]-->
+    <script type="text/javascript" src="/plug/showdown/showdown.min.js"></script>
+    <script src="http://cdn.bootcss.com/pagedown/1.0/Markdown.Converter.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script type="text/javascript" src="/plug/AmazeUI/js/amazeui.ie8polyfill.min.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script type="text/javascript" src="/plug/jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/plug/jquery/jquery.cookie.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="/plug/AmazeUI/js/amazeui.min.js"></script>
+
+    <!--
+    <script type="text/javascript" src="/plug/react/react.min.js"></script>
+    <script type="text/javascript" src="/plug/react/react-dom.min.js"></script>
+    <script type="text/javascript" src="/plug/react/babel.min.js"></script>
+    -->
+    <!--ajax-->
+    <script type="text/javascript" src="/js/common/soaryang.common.handler.js"></script>
+    <script type="text/javascript" src="/js/common/soaryang.ajax.plug.js"></script>
+    <script type="text/javascript" src="/js/common/soaryang.date.plugin.js"></script>
+
+
+</head>
+<body style="background-color: #f4f5f5;">
+<header class="am-topbar am-topbar-fixed-top">
+    <div class="am-container">
+        <h1 class="am-topbar-brand">
+            <a href="/">51结果</a>
+        </h1>
+        <div class="am-collapse am-topbar-collapse" id="collapse-head">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li id="indexPage"><a href="/">首页</a></li>
+                <li  id="tagPage"><a href="/tagList">标签</a></li>
+                <!--
+                <li id="articlePage"><a href="/article">文章</a></li>
+
+                <li><a href="#">问题</a></li>
+                <li><a href="#">大神</a></li>
+                <li><a href="#">标签</a></li>
+                <li><a href="#">文章</a></li>
+                -->
+            </ul>
+            <!--
+            <form class="am-topbar-form am-topbar-left am-form-inline" role="search">
+                <div class="am-form-group">
+                    <input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+                </div>
+            </form>
+            -->
+
+            <!--
+            <div class="am-topbar-right">
+                <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span> 注册</button>
+            </div>
+            -->
+            <div class="am-topbar-right" style="padding-top: 10px;">
+                <!--
+                <img style="width: 50px; height: 50px;" src="http://g.hiphotos.baidu.com/image/h%3D300/sign=7b4bee3e58da81cb51e685cd6267d0a4/4bed2e738bd4b31c512492718ed6277f9f2ff8e4.jpg"/>
+
+                <a href="/login" style="color: #fff;">
+                    <span id="userSpan">
+                        <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm"><span class="am-icon-user"></span> 登陆</button>
+                    </span>
+
+                </a>
+                -->
+
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="my-modal-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">正在载入...</div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
+        </div>
+    </div>
+</div>
 
 <!--
 <div class="get">
@@ -70,7 +172,14 @@
     </a>
 </div>
 
-<%include common/footer.html %>
+<footer class="footer">
+    <p>© 2017-2018 | 京ICP备17046494号-1 </p>
+</footer>
+<script>
+    navbarSelect();
+    initUserInfo();
+</script>
+
 <link rel="stylesheet" href="/css/index.css"/>
 <script src="/js/index.js"></script>
 </body>
