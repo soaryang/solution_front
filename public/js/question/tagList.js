@@ -29,7 +29,7 @@ var init = function () {
                     html+='</p>';
                     html+='<div style="border-top: 1px solid lightgray; margin-top: 10px;padding-top: 5px;">';
                     html+='<span >问题:'+object.questionCount+'</span>';
-                    html+='<span style="margin-left: 10px;"><a href="/article/'+object.id+'">文章:200</a></span>';
+                    html+='<span style="margin-left: 10px;"><a href="/article/'+object.id+'">总结:'+object.articleCount+'</a></span>';
                     html+='</div>';
                     html+='</div>';
                     html+='</div>';
